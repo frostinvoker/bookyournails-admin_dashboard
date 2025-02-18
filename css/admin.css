@@ -253,6 +253,7 @@ table .table-headers{
     }
     .page-container{
         margin: auto;
+        padding: 6.5em 1em 1em 1em;
     }
     .sidebar{
         flex-direction: row;

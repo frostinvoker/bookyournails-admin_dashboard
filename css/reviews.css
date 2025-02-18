@@ -118,7 +118,7 @@ body{
     color: #5B5B5B;
 }
 .reviews-container{
-    min-width: 25ch;
+    min-width: 30ch;
     width: 50%;
     max-width: 35ch;
     height: auto;
@@ -275,6 +275,7 @@ table{
     }
     .page-container{
         margin: auto;
+        padding: 6.5em 0em 1em 0em;
     }
     .sidebar{
         flex-direction: row;
@@ -328,5 +329,45 @@ table{
     }
     .logout h2{
         font-size: 0.7rem;
+    }
+    table{
+        display: block;
+        overflow-x: auto;
+    }
+    .table-rows td::before{
+        content: attr(data-label);
+        display: block;
+    }
+}
+
+@media (max-width: 480px){
+    .page-container{
+        padding: 6em 0.5em 1em 0.5em;
+    }
+    .page-container h1{
+        font-size: 1.5rem;
+    }
+    .reviews-container{
+        max-width: 20ch;
+        width: 100%;
+        padding: 0.5em;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        gap: 1em;
+    }
+    .reviews-card{
+        width: 50%;
+        height: 8ch;
+        border: 2px solid #5B5B5B;
+        border-radius: 9px;
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .vertical-line{
+        display: none;
     }
 }
