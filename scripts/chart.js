@@ -16,6 +16,7 @@ new Chart("myChart", {
         }]
     },
     options: {
+        responsive: true,
         plugins: {
             title: {
                 display: true,

@@ -17,16 +17,32 @@ body{
     height: 100vh;
     color: white;
     width: 20%;
+    min-width: 20ch;
     background-color: #FF9E9E;
     display: flex;
     flex-direction: column;
 }
 .sidebar-header{
     height: 10%;
-    padding: 1.5em 0 1em 0;
-    text-align: center;
+    padding: 1em 1em 1em 1em;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
     font-family: 'Poetsen One', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+.sidebar-header svg{
+    display: none;
+}
+.sidebar-header ul{
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+    gap: 1em;
+}
+.sidebar-header svg{
+    margin-left: 0.5em;
 }
 .header-separator{
     border: 1px solid white;
@@ -103,12 +119,13 @@ body{
 }
 .content-container{
     width: 100%;
-    height: 80ch;
+    min-height: 80ch;
+    height: 100%;
+    max-height: 120ch;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
-    padding: 1em;
 }
 .top-container{
     width: 100%;
@@ -119,7 +136,7 @@ body{
 }
 .top-services{
     width: 100%;
-    height: 45%;
+    height: auto;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
@@ -177,13 +194,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-.appointments-stats-container{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-}
 .sales-revenue{
     width: 100%;
     height: 70%;
@@ -231,8 +241,18 @@ body{
     font-weight: 900;
     letter-spacing: 2px;
 }
+.appointments-stats-container{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+}
 .appointment-stats{
-    width: 33%;
+    flex-shrink: 1;
+    flex-basis: 33%;
+    min-width: 10ch;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -297,16 +317,115 @@ body{
 .progress-gelpolish{
     background-color: #91C7FA;
     height: 1ch;
+    border-radius: 5px;
 }
 .progress-softgel{
     background-color: #FFC943;
     height: 1ch;
+    border-radius: 5px;
 }
 .progress-removal{
     background-color: #FA91BE;
     height: 1ch;
+    border-radius: 5px;
 }
 .progress-regular{
     background-color: #66D575;
     height: 1ch;
+    border-radius: 5px;
+}
+
+@media (max-width: 1024px){
+    .top-container{
+        flex-direction: column;
+        height: auto;
+    }
+    .left-container{
+        width: 100%;
+    }
+    .today-appointments{
+        width: 100%;
+    }
+    .page-container{
+        margin: auto;
+    }
+    .sidebar{
+        flex-direction: row;
+        width: 100%;
+        height: 10%;
+        align-items: center;
+    }
+    .sidebar:last-child{
+        margin-right: auto;
+    }
+    .sidebar-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sidebar-header svg{
+        display: block;
+        position: relative;
+    }
+    .sidebar-header h2{
+        display: none;
+    }
+    .header-separator{
+        display: none;
+    }
+    .menu{
+        position: absolute;
+        width: 20ch;
+        height: 33ch;
+        top: 100%;
+        display: none;
+        justify-content: start;
+        background: #FF9E9E;
+        padding: 0 0.5em 0 1.5em;
+        box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.25);
+    }
+    .menu ul li h2{
+        font-size: 0.7rem;
+    }
+    .booking-dropdown li{
+        font-size: 0.7rem;
+    }
+    .logout{
+        width: 100%;
+        height: 100%;
+        justify-content: end;
+        align-items: center;
+    }
+    .logout svg{
+        display: none;
+    }
+    .logout h2{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:620px){
+    .page-container h1{
+        font-size: 1.5rem;
+    }
+    .appointments-stats-container{
+        flex-direction: column;
+    }
+    .stats-text{
+        display: flex;
+        align-items: center;
+    }
+    .sales-revenue{
+        flex-direction: column;
+    }
+    .sales-revenue .sales-text{
+        width: 100%;
+        padding: 2em;
+    }
+    .sales-graph{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
