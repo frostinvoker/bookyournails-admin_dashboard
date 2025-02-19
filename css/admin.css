@@ -78,7 +78,7 @@ body{
     color:#FFCECE;
 }
 .menu .booking-dropdown{
-    display: none;
+    display: block;
     margin-left: 20%;
 }
 .menu .booking-dropdown li{
@@ -139,6 +139,7 @@ table .tools .filterIcon:hover{
 }
 table .tools .filterIcon{
     position: relative;
+    display: inline-block;
 }
 .filter-container{
     width: 25ch;
@@ -149,7 +150,8 @@ table .tools .filterIcon{
     position: absolute;
     border-radius: 7px;
     text-align: left;
-    left: 80%;
+    right: 0;
+    transform: translateX(-60px);
 }
 .filter-container .filter-header{
     color: #FF9E9E;
@@ -258,7 +260,7 @@ table .table-headers{
     .sidebar{
         flex-direction: row;
         width: 100%;
-        height: 10%;
+        height: 7ch;
         align-items: center;
     }
     .sidebar:last-child{
@@ -316,5 +318,14 @@ table .table-headers{
     .table-rows td::before{
         content: attr(data-label);
         display: block;
+    }
+    .filter-container{
+        transform: translateX(-40px);
+    }
+}
+
+@media (max-width: 620px){
+    .page-container h1{
+        font-size: 1.5rem;
     }
 }

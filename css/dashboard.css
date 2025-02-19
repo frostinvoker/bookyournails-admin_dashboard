@@ -176,9 +176,19 @@ body{
     display: flex;
     flex-direction: row;
     padding: 1em;
+    gap: 1em;
 }
-.today-appointments .card .info{
-    width: 80%;
+.today-appointments .card .checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.today-appointments .card .checkbox input{
+    width: 3ch;
+    height: 3ch;
+}
+.today-appointments .card div:last-child{
+    margin-left: auto;
 }
 .today-appointments .card .info p{
     font-size: 0.7rem;
@@ -189,7 +199,6 @@ body{
     color: black;
 }
 .today-appointments .card .price{
-    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -353,7 +362,7 @@ body{
     .sidebar{
         flex-direction: row;
         width: 100%;
-        height: 10%;
+        height: 7ch;
         align-items: center;
     }
     .sidebar:last-child{

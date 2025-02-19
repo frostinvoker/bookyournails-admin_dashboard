@@ -178,6 +178,9 @@ body{
 .searchbar svg{
     padding-bottom: 0.2em;
 }
+.searchbar svg:hover{
+    cursor: pointer;
+}
 .searchbar input{
     border:none;
 }
@@ -220,6 +223,9 @@ table{
     padding: 1em;
     border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
+}
+.table-headers span:hover{
+    cursor: pointer;
 }
 .customer-id{
     width: 10%;
@@ -276,7 +282,7 @@ table{
     .sidebar{
         flex-direction: row;
         width: 100%;
-        height: 10%;
+        height: 7ch;
         align-items: center;
     }
     .sidebar:last-child{
@@ -334,5 +340,10 @@ table{
     .table-rows td::before{
         content: attr(data-label);
         display: block;
+    }
+}
+@media (max-width: 620px){
+    .page-container h1{
+        font-size: 1.5rem;
     }
 }
