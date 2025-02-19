@@ -111,7 +111,7 @@ body{
     padding: 5em 3em 0 2em;
 }
 .page-container h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #FF9E9E;
 }
 .page-container p{
@@ -203,16 +203,21 @@ table{
     border-radius: 0 7px 0 0;
 }
 .table-rows td{
-    padding: 1em;
+    padding: 1.5em 2em 1.5em 1em;
+    font-size: 0.9rem;
     border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
 }
-
+.table-headers span:hover{
+    cursor: pointer;
+}
 .booking-id{
     width: 15%;
+    min-width: 11ch;
 }
 .customer{
     width: 33%;
+    min-width: 20ch;
 }
 .service{
     width: 12%;
@@ -222,10 +227,11 @@ table{
 }
 .date{
     width: 20%;
+    min-width: 8ch;
 }
 .total{
     width: 10%;
-    text-align: center;
+    min-width: 9ch;
 }
 .cName{
     font-weight: 600;
@@ -236,18 +242,7 @@ table{
 .rejected{
     color: #EE2626;
 }
-.customer-count{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: baseline;
-    align-items: baseline;
-    gap: 0.3em;
-}
-.customer-count h2{
-    color: #757575;
-    font-size: 2rem;
-    font-weight: 400;
-}
+
 
 @media (max-width: 1024px){
     .top-container{

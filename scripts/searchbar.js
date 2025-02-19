@@ -22,7 +22,6 @@ function searchCustomer() {
     rows.forEach(row => {
         let nameCell = row.querySelector(".cName");
         let emailCell = row.querySelector(".email");
-        let reviewCell = row.querySelector(".review");
 
             let name = nameCell ? nameCell.textContent.toLowerCase().replace(/\s+/g, '') : "";
             let email = emailCell ? emailCell.textContent.toLowerCase().replace(/\s+/g, '') : "";

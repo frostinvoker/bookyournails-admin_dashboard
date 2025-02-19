@@ -111,7 +111,7 @@ body{
     padding: 5em 3em 0 2em;
 }
 .page-container h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #FF9E9E;
 }
 .page-container p{
@@ -210,19 +210,23 @@ body{
 }
 .customer-name{
     width: 20%;
+    min-width: 15ch;
 }
 .service{
     width: 10%;
 }
  .rating{
     width: 10%;
+    min-width: 10ch;
     text-align: center;
 }
 .review{
     width: 25%;
+    min-width: 20ch;
 }
 .date{
     width: 10%;
+    min-width: 10ch;
 }
 
 .table-container{
@@ -254,9 +258,13 @@ table{
     border-radius: 0 7px 0 0;
 }
 .table-rows td{
-    padding: 1em;
+    padding: 1.5em 2em 1.5em 1em;
+    font-size: 0.9rem;
     border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
+}
+.table-headers span:hover{
+    cursor: pointer;
 }
 
 .cName{
@@ -349,7 +357,8 @@ table{
         font-size: 1.5rem;
     }
     .reviews-container{
-        max-width: 20ch;
+        min-width: 20ch;
+        max-width: 30ch;
         width: 100%;
         padding: 0.5em;
         flex-wrap: wrap;
@@ -366,6 +375,9 @@ table{
         padding: 0.5em;
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+    .reviews-card .reviews-number{
         align-items: center;
     }
     .vertical-line{
