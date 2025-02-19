@@ -210,6 +210,7 @@ button {
     }
     .page-container{
         margin: auto;
+        padding: 6.5em 1em 1em 1em;
     }
     .sidebar{
         flex-direction: row;
@@ -284,6 +285,10 @@ button {
     .avatar{
         margin: auto;
         color: black;
+    }
+    .avatar svg{
+        border: 5px solid #FF9E9E;
+        border-radius: 50%;
     }
     .right-container{
         width: 100%;

@@ -123,7 +123,7 @@ body{
     width: 100%;
     align-items: center;
 }
-.toolbar div:last-of-type{
+.toolbar div:last-child{
     margin-left: auto;
 }
 .tabs{
@@ -262,6 +262,7 @@ table{
     }
     .page-container{
         margin: auto;
+        padding: 6.5em 1em 1em 1em;
     }
     .sidebar{
         flex-direction: row;
@@ -317,7 +318,27 @@ table{
         font-size: 0.7rem;
     }
     .toolbar{
+        width: 100%;
         flex-direction: column;
         gap: 1em;
+    }
+    table{
+        display: block;
+        overflow-x: auto;
+    }
+    .table-rows td::before{
+        content: attr(data-label);
+        display: block;
+    }
+}
+@media (max-width:480px){
+    .toolbar .tabs{
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        font-size: 0.7rem;
+    }
+    .toolbar .tabs div:last-child{
+        margin: 0;
     }
 }
