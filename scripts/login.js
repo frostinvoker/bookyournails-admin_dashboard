@@ -4,7 +4,6 @@ document.getElementById("signup-form").addEventListener("submit", async function
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const errorHandling = document.querySelector(".error-handling");
-    
     errorHandling.textContent = "";
     
     const requestData = {
@@ -13,7 +12,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
     };
     
     try {
-        const response = await fetch("http://localhost:8000/login", {
+        const response = await fetch("http://localhost:8000/adminLogin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -31,7 +30,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
         localStorage.setItem("session_token", data.session_token);
         
         alert("Login successful");
-        window.location.href = "dashboard.html"; // Redirect after login
+        window.location.href = "dashboard.html";
     } catch (error) {
         errorHandling.textContent = error.message;
         errorHandling.style.color = "red";

@@ -78,7 +78,7 @@ body{
     color:#FFCECE;
 }
 .menu .booking-dropdown{
-    display: none;
+    display: block;
     margin-left: 20%;
 }
 .menu .booking-dropdown li{
@@ -267,7 +267,7 @@ table{
     .sidebar{
         flex-direction: row;
         width: 100%;
-        height: 10%;
+        height: 7ch;
         align-items: center;
     }
     .sidebar:last-child{
@@ -331,12 +331,15 @@ table{
         display: block;
     }
 }
-@media (max-width:480px){
+@media (max-width:630px){
     .toolbar .tabs{
         width: 100%;
         flex-direction: column;
         gap: 0;
         font-size: 0.7rem;
+    }
+    .page-container h1{
+        font-size: 1.5rem;
     }
     .toolbar .tabs div:last-child{
         margin: 0;
