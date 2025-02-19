@@ -111,7 +111,7 @@ body{
     padding: 5em 3em 0 2em;
 }
 .page-container h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #FF9E9E;
 }
 .page-container p{
@@ -220,7 +220,8 @@ table{
     border-radius: 0 7px 0 0;
 }
 .table-rows td{
-    padding: 1em;
+    padding: 1.5em 2em 1.5em 1em;
+    font-size: 0.9rem;
     border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
 }
@@ -263,6 +264,10 @@ table{
 .rejected{
     color: #EE2626;
 }
+.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
 
 /*Tablet*/
 @media (max-width: 1024px) {
@@ -278,6 +283,7 @@ table{
     }
     .page-container{
         margin: auto;
+        padding: 6.5em 1em 1em 1em;
     }
     .sidebar{
         flex-direction: row;
