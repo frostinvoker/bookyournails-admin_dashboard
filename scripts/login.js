@@ -26,7 +26,6 @@ document.getElementById("signup-form").addEventListener("submit", async function
             throw new Error(data.error || "An error occurred");
         }
         
-        // Store session token in localStorage or cookie
         localStorage.setItem("session_token", data.session_token);
         
         alert("Login successful");
