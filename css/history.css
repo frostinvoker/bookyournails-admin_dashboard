@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
 }
 .sidebar{
     position: fixed;
@@ -48,8 +48,10 @@ body{
     border: 1px solid white;
 }
 .menu{
-    height: 75%;
     padding: 1.5em;
+}
+.sidebar div:last-child{
+    margin-top: auto;
 }
 .menu ul{
     list-style: none;
@@ -108,7 +110,7 @@ body{
 .page-container{
     width: 80%;
     margin-left: 20%;
-    padding: 5em 3em 0 2em;
+    padding: 5em 3em 2em 2em;
 }
 .page-container h1{
     font-size: 2rem;
@@ -129,7 +131,6 @@ body{
 .tabs{
     background-color: #F5F6FA;
     display: inline-flex;
-    gap: 2em;
     border-radius: 9px;
 }
 .tabs-item{
@@ -205,8 +206,13 @@ table{
 .table-rows td{
     padding: 1.5em 2em 1.5em 1em;
     font-size: 0.9rem;
-    border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
+}
+.table-rows{
+    border-bottom: 2px solid #c4c4c4;
+}
+.table-rows:last-of-type{
+    border-bottom: none;
 }
 .table-headers span:hover{
     cursor: pointer;
@@ -227,7 +233,7 @@ table{
 }
 .date{
     width: 20%;
-    min-width: 8ch;
+    min-width: 12ch;
 }
 .total{
     width: 10%;
@@ -256,8 +262,9 @@ table{
         width: 100%;
     }
     .page-container{
+        width: 100%;
         margin: auto;
-        padding: 6.5em 1em 1em 1em;
+        padding: 6.5em 3em 1em 3em;
     }
     .sidebar{
         flex-direction: row;
@@ -286,7 +293,7 @@ table{
     .menu{
         position: absolute;
         width: 20ch;
-        height: 33ch;
+        height: 100vh;
         top: 100%;
         display: none;
         justify-content: start;
@@ -338,5 +345,10 @@ table{
     }
     .toolbar .tabs div:last-child{
         margin: 0;
+    }
+}
+@media (max-width:480px){
+    .page-container{
+        padding: 6.5em 1em 1em 1em;
     }
 }

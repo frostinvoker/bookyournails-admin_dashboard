@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/history.css">
+    <link rel="stylesheet" href="./css/active_bookings.css">
     <!--Inter Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&display=swap" rel="stylesheet">
-    <title>Booking History</title>
+    <title>Active Bookings</title>
 </head>
 <body>
     <div class="container">
@@ -23,7 +23,7 @@
                     <svg width="28" height="19" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.999999 0C0.447714 0 0 0.447715 0 1V1.71429C0 2.26657 0.447715 2.71429 1 2.71429H26.1429C26.6951 2.71429 27.1429 2.26657 27.1429 1.71429V1C27.1429 0.447715 26.6951 0 26.1429 0H0.999999ZM0.999999 8.14286C0.447714 8.14286 0 8.59057 0 9.14286V9.85714C0 10.4094 0.447715 10.8571 1 10.8571H26.1429C26.6951 10.8571 27.1429 10.4094 27.1429 9.85714V9.14286C27.1429 8.59057 26.6951 8.14286 26.1429 8.14286H0.999999ZM0.999999 16.2857C0.447714 16.2857 0 16.7334 0 17.2857V18C0 18.5523 0.447715 19 1 19H26.1429C26.6951 19 27.1429 18.5523 27.1429 18V17.2857C27.1429 16.7334 26.6951 16.2857 26.1429 16.2857H0.999999Z" fill="white"/>
                     </svg>                 
-                </span>
+                </span>   
             </div>
             <div class="header-separator"></div>
             <div class="menu">
@@ -61,18 +61,18 @@
                         </span>
                     </li>
                     <ul class="booking-dropdown">
-                        <li><a href="active_bookings.html">Active Bookings</a></li>
-                        <li><a href="booking_history.html" class="active">Booking History</a></li>
+                        <li><a href="active_bookings.html" class="active">Active Bookings</a></li>
+                        <li><a href="booking_history.html">Booking History</a></li>
                     </ul>
-                    <li> 
+                    <li>
                         <a href="customers.html">
                             <svg width="32" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M31.34 18.26C34.08 20.12 36 22.64 36 26V32H44V26C44 21.64 36.86 19.06 31.34 18.26Z" fill="#FFCECE"/>
                                 <path d="M16 16C20.4183 16 24 12.4183 24 8C24 3.58172 20.4183 0 16 0C11.5817 0 8 3.58172 8 8C8 12.4183 11.5817 16 16 16Z" fill="#FFCECE"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M28 16C32.42 16 36 12.42 36 8C36 3.58 32.42 0 28 0C27.06 0 26.18 0.2 25.34 0.48C27 2.54 28 5.16 28 8C28 10.84 27 13.46 25.34 15.52C26.18 15.8 27.06 16 28 16Z" fill="#FFCECE"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16 18C10.66 18 0 20.68 0 26V32H32V26C32 20.68 21.34 18 16 18Z" fill="#FFCECE"/>
-                            </svg> 
-                        </a>       
+                            </svg>        
+                        </a> 
                         <h2><a href="customers.html">Customers</h2></a>
                     </li>
                     <li>
@@ -95,103 +95,137 @@
             </div>
         </div>
         <div class="page-container">
-            <h1>Booking History</h1><br/>
+            <h1>Pending Bookings</h1>
+            <p>You have total 5 pending bookings</p>
+            <br/><br/>
             <div class="toolbar">
                 <div class="tabs">
                     <div class="tabs-item">
-                        <a href="booking_history.html">All Booking</a>
+                        <a href="active_bookings.html">Approved</a>
                     </div>
                     <div class="tabs-item active">
-                        <a href="#">Completed</a>
-                    </div>
-                    <div class="tabs-item">
-                        <a href="booking_history_rejected.html">Rejected</a>
+                        <a href="#">Pending</a>
                     </div>
                 </div>
-                <div class="searchbar">
-                    <input type="text" name="searchBar" placeholder="Search..." onkeyup="search()">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.7233 13.8365H14.7296L14.3774 13.4969C15.6101 12.0629 16.3522 10.2013 16.3522 8.1761C16.3522 3.66038 12.6918 0 8.1761 0C3.66038 0 0 3.66038 0 8.1761C0 12.6918 3.66038 16.3522 8.1761 16.3522C10.2013 16.3522 12.0629 15.6101 13.4969 14.3774L13.8365 14.7296V15.7233L20.1258 22L22 20.1258L15.7233 13.8365ZM8.1761 13.8365C5.04402 13.8365 2.51572 11.3082 2.51572 8.1761C2.51572 5.04402 5.04402 2.51572 8.1761 2.51572C11.3082 2.51572 13.8365 5.04402 13.8365 8.1761C13.8365 11.3082 11.3082 13.8365 8.1761 13.8365Z" fill="#BDBDBD"/>
-                    </svg>                        
-                </div>
+                <span class="filterIcon" onclick="toggleFilter()">
+                    <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.25 21H19.25V17.5H12.25V21ZM0 0V3.5H31.5V0H0ZM5.25 12.25H26.25V8.75H5.25V12.25Z"/>
+                    </svg>
+                </span>
             </div>
             <br/><br/>
             <div class="table-container">
-                <div class="table-content">
-                    <table id="historyTable">
-                        <tr class="table-headers">
-                            <th class="booking-id">Booking ID</th>
-                            <th class="customer">Customer
-                                <span id="customer-name-sorting">
-                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.00009 15.5C7.33161 15.5 7.64956 15.3683 7.88398 15.1339C8.1184 14.8995 8.25009 14.5816 8.25009 14.25V4.35004L11.5334 7.63337C11.7704 7.85417 12.0838 7.97438 12.4076 7.96866C12.7315 7.96295 13.0404 7.83176 13.2695 7.60274C13.4985 7.37372 13.6297 7.06475 13.6354 6.74091C13.6411 6.41708 13.5209 6.10366 13.3001 5.86671L7.88343 0.450039C7.64905 0.215955 7.33134 0.0844727 7.00009 0.0844727C6.66884 0.0844727 6.35113 0.215955 6.11676 0.450039L0.700093 5.86671C0.577282 5.98114 0.478778 6.11914 0.410458 6.27248C0.342138 6.42581 0.305402 6.59133 0.302441 6.75917C0.299479 6.92701 0.330354 7.09372 0.393222 7.24937C0.45609 7.40502 0.549665 7.54641 0.668362 7.6651C0.78706 7.7838 0.92845 7.87738 1.0841 7.94024C1.23974 8.00311 1.40646 8.03399 1.5743 8.03103C1.74214 8.02806 1.90766 7.99133 2.06099 7.92301C2.21432 7.85469 2.35232 7.75618 2.46676 7.63337L5.75009 4.35004V14.25C5.75009 14.94 6.31009 15.5 7.00009 15.5Z" fill="white"/>
-                                    </svg>                                        
-                                </span>
-                            </th>
-                            <th class="service">Service</th>
-                            <th class="status">Status</th>
-                            <th class="date">Date
-                                <span id="date-sorting">
-                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.00009 15.5C7.33161 15.5 7.64956 15.3683 7.88398 15.1339C8.1184 14.8995 8.25009 14.5816 8.25009 14.25V4.35004L11.5334 7.63337C11.7704 7.85417 12.0838 7.97438 12.4076 7.96866C12.7315 7.96295 13.0404 7.83176 13.2695 7.60274C13.4985 7.37372 13.6297 7.06475 13.6354 6.74091C13.6411 6.41708 13.5209 6.10366 13.3001 5.86671L7.88343 0.450039C7.64905 0.215955 7.33134 0.0844727 7.00009 0.0844727C6.66884 0.0844727 6.35113 0.215955 6.11676 0.450039L0.700093 5.86671C0.577282 5.98114 0.478778 6.11914 0.410458 6.27248C0.342138 6.42581 0.305402 6.59133 0.302441 6.75917C0.299479 6.92701 0.330354 7.09372 0.393222 7.24937C0.45609 7.40502 0.549665 7.54641 0.668362 7.6651C0.78706 7.7838 0.92845 7.87738 1.0841 7.94024C1.23974 8.00311 1.40646 8.03399 1.5743 8.03103C1.74214 8.02806 1.90766 7.99133 2.06099 7.92301C2.21432 7.85469 2.35232 7.75618 2.46676 7.63337L5.75009 4.35004V14.25C5.75009 14.94 6.31009 15.5 7.00009 15.5Z" fill="white"/>
-                                    </svg>                                        
-                                </span>
-                            </th>
-                            <th class="total">Total
-                                <span id="total-sorting">
-                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.00009 15.5C7.33161 15.5 7.64956 15.3683 7.88398 15.1339C8.1184 14.8995 8.25009 14.5816 8.25009 14.25V4.35004L11.5334 7.63337C11.7704 7.85417 12.0838 7.97438 12.4076 7.96866C12.7315 7.96295 13.0404 7.83176 13.2695 7.60274C13.4985 7.37372 13.6297 7.06475 13.6354 6.74091C13.6411 6.41708 13.5209 6.10366 13.3001 5.86671L7.88343 0.450039C7.64905 0.215955 7.33134 0.0844727 7.00009 0.0844727C6.66884 0.0844727 6.35113 0.215955 6.11676 0.450039L0.700093 5.86671C0.577282 5.98114 0.478778 6.11914 0.410458 6.27248C0.342138 6.42581 0.305402 6.59133 0.302441 6.75917C0.299479 6.92701 0.330354 7.09372 0.393222 7.24937C0.45609 7.40502 0.549665 7.54641 0.668362 7.6651C0.78706 7.7838 0.92845 7.87738 1.0841 7.94024C1.23974 8.00311 1.40646 8.03399 1.5743 8.03103C1.74214 8.02806 1.90766 7.99133 2.06099 7.92301C2.21432 7.85469 2.35232 7.75618 2.46676 7.63337L5.75009 4.35004V14.25C5.75009 14.94 6.31009 15.5 7.00009 15.5Z" fill="white"/>
-                                    </svg>                                        
-                                </span>
-                            </th>
-                        </tr>
-                        <tr class="table-rows">
-                            <td class="booking-id">#1001</td>
-                            <td class="cName customer">Nicholas Gonzales</td>
-                            <td class="service">Gel Polish</td>
-                            <td class="status completed">Completed</td>
-                            <td class="date">02-08-2025</td>
-                            <td class="total">₱300</td>
-                        </tr>
-                        <tr class="table-rows">
-                            <td class="booking-id">#1005</td>
-                            <td class="cName customer">Deonafe Dela Cruz</td>
-                            <td class="service">Gel Polish</td>
-                            <td class="status completed">Completed</td>
-                            <td class="date">02-08-2025</td>
-                            <td class="total">₱300</td>
-                        </tr>
-                        <tr class="table-rows">
-                            <td class="booking-id">#1008</td>
-                            <td class="cName customer">Yuri Hanamitchi</td>
-                            <td class="service">Removal</td>
-                            <td class="status completed">Completed</td>
-                            <td class="date">02-08-2025</td>
-                            <td class="total">₱150</td>
-                        </tr>
-                        <tr class="table-rows">
-                            <td class="booking-id">#1009</td>
-                            <td class="cName customer">Rakki San Diego</td>
-                            <td class="service">Removal</td>
-                            <td class="status completed">Completed</td>
-                            <td class="date">02-08-2025</td>
-                            <td class="total">₱300</td>
-                        </tr>
-                        <tr class="table-rows">
-                            <td class="booking-id">#1010</td>
-                            <td class="cName customer">Ella Dianne Hyun</td>
-                            <td class="service">Removal</td>
-                            <td class="status completed">Completed</td>
-                            <td class="date">02-08-2025</td>
-                            <td class="total">₱300</td>
-                        </tr>
-                    </table>
-                </div>
+                <table>
+                    <div class="filter-container">
+                        <div class="filter-header">
+                            <h3>Filter Bookings</h3>
+                        </div>
+                        <hr/>
+                        <div class="filter-content">
+                            <ul>
+                                <li>
+                                    <h5>Status</h5>
+                                    <select name="status" id="status">
+                                        <option value="approved">Approved</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <h5>Service</h5>
+                                    <select name="service" id="service">
+                                        <option value="regular">Regular</option>
+                                        <option value="gel_polish">Gel Polish</option>
+                                        <option value="soft_gel_x">Soft Gel X</option>
+                                        <option value="removal">Removal</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <h5>Time</h5>
+                                    <select name="time" id="time">
+                                        <option value="9AM">9:00 AM</option>
+                                        <option value="1PM">1:00 PM</option>
+                                        <option value="4PM">4:00 PM</option>
+                                    </select>
+                                </li>
+                                <li class="filter-buttons">
+                                    <button id="filter-apply">Apply</button>
+                                    <button id="filter-reset">Reset</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <tr class="table-headers">
+                        <th class="customer">Customer</th>
+                        <th class="serivce">Service</th>
+                        <th class="status">Status</th>
+                        <th class="date">Date</th>
+                        <th class="time">Time</th>
+                        <th></th>
+                    </tr>
+                    <tr class="table-rows">
+                        <td class="cName customer">Mark Angelo Delfin</td>
+                        <td class="service">Removal</td>
+                        <td class="status pending">Pending</td>
+                        <td class="date">02-01-2025</td>
+                        <td class="time">9:00 AM</td>
+                        <td><a class="details" href="index.html">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
+                            </svg>
+                        </a></td>
+                    </tr>
+                    <tr class="table-rows">
+                        <td class="cName customer">Ericka Brudo</td>
+                        <td class="service">Soft Gel X</td>
+                        <td class="status pending">Pending</td>
+                        <td class="date">02-01-2025</td>
+                        <td class="time">9:00 AM</td>
+                        <td><a class="details" href="index.html">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
+                            </svg>
+                        </a></td>
+                    </tr>
+                    <tr class="table-rows">
+                        <td class="cName customer">Mariel Bustamante</td>
+                        <td class="service">Soft Gel X</td>
+                        <td class="status pending">Pending</td>
+                        <td class="date">02-11-2025</td>
+                        <td class="time">9:00 AM</td>
+                        <td><a class="details" href="index.html">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
+                            </svg>
+                        </a></td>
+                    </tr>
+                    <tr class="table-rows">
+                        <td class="cName customer">MArk Keifer Watson</td>
+                        <td class="service">Regular</td>
+                        <td class="status pending">Pending</td>
+                        <td class="date">02-14-2025</td>
+                        <td class="time">1:00 PM</td>
+                        <td><a class="details" href="index.html">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
+                            </svg>
+                        </a></td>
+                    </tr>
+                    <tr class="table-rows">
+                        <td class="cName customer">Jasper Jean Jay-Jay Mariano</td>
+                        <td class="service">Soft Gel X</td>
+                        <td class="status pending">Pending</td>
+                        <td class="date">02-14-2025</td>
+                        <td class="time">4:00 PM</td>
+                        <td><a class="details" href="index.html">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
+                            </svg>
+                        </a></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
-<script src="./scripts/searchbar.js"></script>    
 <script src="./scripts/menus.js"></script>
-<script src="./scripts/sorting.js"></script>
 </body>
 </html>

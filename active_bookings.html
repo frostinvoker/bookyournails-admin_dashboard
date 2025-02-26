@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/active_bookings.css">
     <!--Inter Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +77,7 @@
                     </li>
                     <li>
                         <a href="reviews.html">
-                            <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.2 20.4H12.735L21.69 11.9C21.96 11.645 22.1628 11.3543 22.2984 11.0279C22.434 10.7015 22.5012 10.383 22.5 10.0725C22.4988 9.76197 22.4316 9.45767 22.2984 9.1596C22.1652 8.86153 21.9774 8.585 21.735 8.33L20.07 6.715C19.8 6.46 19.5 6.26903 19.17 6.1421C18.84 6.01517 18.495 5.95113 18.135 5.95C17.805 5.95 17.475 6.01403 17.145 6.1421C16.815 6.27017 16.515 6.46113 16.245 6.715L7.2 15.1725V20.4ZM18.09 11.73L16.38 10.1575L18.135 8.5L19.8 10.115L18.09 11.73ZM16.56 20.4H28.8V17H20.16L16.56 20.4ZM0 34V3.4C0 2.465 0.3528 1.66487 1.0584 0.9996C1.764 0.334333 2.6112 0.00113333 3.6 0H32.4C33.39 0 34.2378 0.3332 34.9434 0.9996C35.649 1.666 36.0012 2.46613 36 3.4V23.8C36 24.735 35.6478 25.5357 34.9434 26.2021C34.239 26.8685 33.3912 27.2011 32.4 27.2H7.2L0 34Z" fill="#FFCECE"/>
                             </svg>
                         </a>
@@ -95,26 +95,27 @@
             </div>
         </div>
         <div class="page-container">
-            <h1>Active Bookings</h1>
-            <p>You have total 10 bookings</p>
+            <h1>Approved Bookings</h1>
+            <p>You have total 5 approved bookings</p>
             <br/><br/>
-            <span class="filterIconMobile" onclick="toggleFilter()">
-                <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.25 21H19.25V17.5H12.25V21ZM0 0V3.5H31.5V0H0ZM5.25 12.25H26.25V8.75H5.25V12.25Z" fill="#FF9E9E"/>
-                </svg>
-            </span>
+            <div class="toolbar">
+                <div class="tabs">
+                    <div class="tabs-item active">
+                        <a href="#">Approved</a>
+                    </div>
+                    <div class="tabs-item">
+                        <a href="pending_booking.html">Pending</a>
+                    </div>
+                </div>
+                <span class="filterIcon" onclick="toggleFilter()">
+                    <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.25 21H19.25V17.5H12.25V21ZM0 0V3.5H31.5V0H0ZM5.25 12.25H26.25V8.75H5.25V12.25Z"/>
+                    </svg>
+                </span>
+            </div>
+            <br/><br/>
             <div class="table-container">
                 <table>
-                    <tr class="tools">
-                        <td></td>     
-                        <td colspan="5" class="filter-section">
-                            <span class="filterIcon" onclick="toggleFilter()">
-                                <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.25 21H19.25V17.5H12.25V21ZM0 0V3.5H31.5V0H0ZM5.25 12.25H26.25V8.75H5.25V12.25Z" fill="#FF9E9E"/>
-                                </svg>
-                            </span>
-                        </td>                   
-                    </tr>
                     <div class="filter-container">
                         <div class="filter-header">
                             <h3>Filter Bookings</h3>
@@ -122,13 +123,6 @@
                         <hr/>
                         <div class="filter-content">
                             <ul>
-                                <li>
-                                    <h5>Status</h5>
-                                    <select name="status" id="status">
-                                        <option value="approved">Approved</option>
-                                        <option value="pending">Pending</option>
-                                    </select>
-                                </li>
                                 <li>
                                     <h5>Service</h5>
                                     <select name="service" id="service">
@@ -139,9 +133,11 @@
                                     </select>
                                 </li>
                                 <li>
-                                    <h5>Date</h5>
-                                    <select name="date" id="date">
-                                        <option value="date">Date</option>
+                                    <h5>Time</h5>
+                                    <select name="time" id="time">
+                                        <option value="9AM">9:00 AM</option>
+                                        <option value="1PM">1:00 PM</option>
+                                        <option value="4PM">4:00 PM</option>
                                     </select>
                                 </li>
                                 <li class="filter-buttons">
@@ -152,19 +148,19 @@
                         </div>
                     </div>
                     <tr class="table-headers">
-                        <th>Customer</th>
-                        <th>Service</th>
-                        <th>Status</th>
-                        <th>Date</th>
-                        <th>Time</th>
+                        <th class="customer">Customer</th>
+                        <th class="serivce">Service</th>
+                        <th class="status">Status</th>
+                        <th class="date">Date</th>
+                        <th class="time">Time</th>
                         <th></th>
                     </tr>
                     <tr class="table-rows">
                         <td class="cName">Nicholas Gonzales</td>
-                        <td>Gel Polish</td>
+                        <td class="service">Gel Polish</td>
                         <td class="status approved">Approved</td>
                         <td>02-08-2025</td>
-                        <td>1:00 PM</td>
+                        <td class="time">1:00 PM</td>
                         <td><a class="details" href="full_details.html">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
@@ -172,47 +168,11 @@
                         </a></td>
                     </tr>
                     <tr class="table-rows">
-                        <td class="cName">Mark Angelo Delfin</td>
-                        <td>Removal</td>
-                        <td class="status pending">Pending</td>
-                        <td>02-01-2025</td>
-                        <td>9:00 AM</td>
-                        <td><a class="details" href="index.html">
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
-                            </svg>
-                        </a></td>
-                    </tr>
-                    <tr class="table-rows">
-                        <td class="cName">Ericka Brudo</td>
-                        <td>Soft Gel X</td>
-                        <td class="status pending">Pending</td>
-                        <td>02-01-2025</td>
-                        <td>9:00 AM</td>
-                        <td><a class="details" href="index.html">
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
-                            </svg>
-                        </a></td>
-                    </tr>
-                    <tr class="table-rows">
-                        <td class="cName">Mariel Bustamante</td>
-                        <td>SOft Gel X</td>
-                        <td class="status pending">Pending</td>
-                        <td>02-11-2025</td>
-                        <td>9:00 AM</td>
-                        <td><a class="details" href="index.html">
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
-                            </svg>
-                        </a></td>
-                    </tr>
-                    <tr class="table-rows">
-                        <td class="cName">Deonafe Dela Cruz</td>
-                        <td>Gel Polish</td>
+                        <td class="cName customer">Deonafe Dela Cruz</td>
+                        <td class="service">Gel Polish</td>
                         <td class="status approved">Approved</td>
-                        <td>02-08-2025</td>
-                        <td>4:00 PM</td>
+                        <td class="date">02-08-2025</td>
+                        <td class="time">4:00 PM</td>
                         <td><a class="details" href="index.html">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
@@ -220,35 +180,11 @@
                         </a></td>
                     </tr>
                     <tr class="table-rows">
-                        <td class="cName">MArk Keifer Watson</td>
-                        <td>Regular</td>
-                        <td class="status pending">Pending</td>
-                        <td>02-14-2025</td>
-                        <td>1:00 PM</td>
-                        <td><a class="details" href="index.html">
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
-                            </svg>
-                        </a></td>
-                    </tr>
-                    <tr class="table-rows">
-                        <td class="cName">Jasper Jean Jay-Jay Mariano</td>
-                        <td>Soft Gel X</td>
-                        <td class="status pending">Pending</td>
-                        <td>02-14-2025</td>
-                        <td>4:00 PM</td>
-                        <td><a class="details" href="index.html">
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
-                            </svg>
-                        </a></td>
-                    </tr>
-                    <tr class="table-rows">
-                        <td class="cName">Yuri Hanamitchi</td>
-                        <td>Removal</td>
+                        <td class="cName customer">Yuri Hanamitchi</td>
+                        <td class="service">Removal</td>
                         <td class="status approved">Approved</td>
-                        <td>02-08-2025</td>
-                        <td>1:00 PM</td>
+                        <td class="date">02-08-2025</td>
+                        <td class="time">1:00 PM</td>
                         <td><a class="details" href="index.html">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
@@ -256,11 +192,11 @@
                         </a></td>
                     </tr>
                     <tr class="table-rows">
-                        <td class="cName">Rakki San Diego</td>
-                        <td>Removal</td>
+                        <td class="cName customer">Rakki San Diego</td>
+                        <td class="service">Removal</td>
                         <td class="status approved">Approved</td>
-                        <td>02-08-2025</td>
-                        <td>9:00 AM</td>
+                        <td class="date">02-08-2025</td>
+                        <td class="time">9:00 AM</td>
                         <td><a class="details" href="index.html">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>
@@ -268,11 +204,11 @@
                         </a></td>
                     </tr>
                     <tr class="table-rows">
-                        <td class="cName">Ella Dianne Hyun</td>
-                        <td>Removal</td>
+                        <td class="cName customer">Ella Dianne Hyun</td>
+                        <td class="service">Removal</td>
                         <td class="status approved">Approved</td>
-                        <td>02-08-2025</td>
-                        <td>4:00 PM</td>
+                        <td class="date">02-08-2025</td>
+                        <td class="time">4:00 PM</td>
                         <td><a class="details" href="index.html">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M-4.62532e-05 12.8558L1.14521 14L7.38315 7.76423C7.4837 7.66431 7.5635 7.54549 7.61795 7.41461C7.67241 7.28373 7.70044 7.14337 7.70044 7.00162C7.70044 6.85986 7.67241 6.71951 7.61795 6.58863C7.5635 6.45775 7.4837 6.33893 7.38315 6.23901L1.14521 0L0.00103283 1.14418L5.85577 7L-4.62532e-05 12.8558Z" fill="#1E1E1E"/>

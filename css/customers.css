@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
 }
 .sidebar{
     position: fixed;
@@ -48,7 +48,6 @@ body{
     border: 1px solid white;
 }
 .menu{
-    height: 75%;
     padding: 1.5em;
 }
 .menu ul{
@@ -90,6 +89,9 @@ body{
 .menu .booking-dropdown a:link{
     color: #FFCECE;
 }
+.sidebar div:last-child{
+    margin-top: auto;
+}
 .logout{
     height: 15%;
     display: inline-flex;
@@ -108,7 +110,7 @@ body{
 .page-container{
     width: 80%;
     margin-left: 20%;
-    padding: 5em 3em 0 2em;
+    padding: 5em 3em 2em 2em;
 }
 .page-container h1{
     font-size: 2rem;
@@ -219,10 +221,15 @@ table{
 .table-headers th:last-child{
     border-radius: 0 7px 0 0;
 }
+.table-rows{
+    border-bottom: 2px solid #c4c4c4;
+}
+.table-rows:last-of-type{
+    border-bottom: none;
+}
 .table-rows td{
     padding: 1.5em 2em 1.5em 1em;
     font-size: 0.9rem;
-    border-bottom: 2px solid #c4c4c4;
     overflow: hidden;
 }
 .table-headers span:hover{
@@ -282,8 +289,9 @@ table{
         width: 100%;
     }
     .page-container{
+        width: 100%;
         margin: auto;
-        padding: 6.5em 1em 1em 1em;
+        padding: 6.5em 3em 1em 3em;
     }
     .sidebar{
         flex-direction: row;
@@ -312,7 +320,7 @@ table{
     .menu{
         position: absolute;
         width: 20ch;
-        height: 33ch;
+        height: 100vh;
         top: 100%;
         display: none;
         justify-content: start;
@@ -351,5 +359,10 @@ table{
 @media (max-width: 620px){
     .page-container h1{
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 480px){
+    .page-container{
+        padding: 6.5em 1em 1em 1em;
     }
 }

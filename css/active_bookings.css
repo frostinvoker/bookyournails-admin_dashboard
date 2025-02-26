@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: container;
 }
 .sidebar{
     position: fixed;
@@ -49,8 +49,10 @@ body{
     border: 1px solid white;
 }
 .menu{
-    height: 75%;
     padding: 1.5em;
+}
+.sidebar div:last-child{
+    margin-top: auto;
 }
 .menu ul{
     list-style: none;
@@ -109,7 +111,7 @@ body{
 .page-container{
     width: 80%;
     margin-left: 20%;
-    padding: 5em 3em 0 2em;
+    padding: 5em 3em 2em 2em;
 }
 .page-container h1{
     font-size: 2rem;
@@ -118,32 +120,57 @@ body{
 .page-container p{
     color: #5B5B5B;
 }
-.page-container .filterIconMobile {
-    display: none;
+.toolbar{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+.toolbar span:last-child{
+    margin-left: auto;
+}
+.tabs{
+    background-color: #F5F6FA;
+    display: inline-flex;
+    border-radius: 9px;
+}
+.tabs-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1.5em;
+}
+.tabs-item a{
+    text-decoration: none;
+    color: #D9D9D9;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.tabs .active{
+    background-color: #FF9E9E;
+    font-weight: bold;
+    border-radius: 9px;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
+}
+.tabs .active a{
+    color: white;
+}
+
+.page-container .filterIcon {
+    position: relative;
+    display: inline-block;
+}
+.filterIcon svg{
+    fill: #BDBDBD;
+}
+.page-container .filterIcon:hover{
+    cursor: pointer;
 }
 .table-container{
     width: 100%;
     background-color: white;
     border-radius: 9px;
-    border: 1px solid #757575;
-}
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-table .tools {
-    height: 10ch;
-    text-align: right;
-}
-table .tools td{
-    padding: 0 2em;
-}
-table .tools .filterIcon:hover{
-    cursor: pointer;
-}
-table .tools .filterIcon{
-    position: relative;
-    display: inline-block;
+    border: 2px solid #c4c4c4;
 }
 .filter-container{
     width: 25ch;
@@ -155,7 +182,7 @@ table .tools .filterIcon{
     border-radius: 7px;
     text-align: left;
     right: 0;
-    transform: translateX(-90px) translateY(70px);
+    transform: translateX(-50px) translateY(-20px);
     z-index: 13;
 }
 .filter-container .filter-header{
@@ -172,6 +199,9 @@ table .tools .filterIcon{
     justify-content: center;
     gap: 1em;
 }
+.filter-container h5{
+    color: #FF9E9E;
+}
 .filter-container .filter-content ul li{
     display: flex;
     flex-direction: column;
@@ -180,7 +210,7 @@ table .tools .filterIcon{
     border: 1px solid #C4C4C4;
     padding: 0.5em;
 }
-.filter-container .filter-content ul li select:active{
+.filter-container .filter-content ul li select:focus{
     border: 1px solid #C4C4C4;
 }
 .filter-container .filter-content ul li option{
@@ -213,24 +243,53 @@ table .tools .filterIcon{
 .filter-container .filter-content ul .filter-buttons #filter-reset:hover{
     cursor: pointer;
 }
-table .table-headers{
+table{
     width: 100%;
-    color: #FF9E9E;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.table-headers{
+    background-color: #FF9E9E;
+    color: white;
+    text-align: left;
 }
 .table-headers th{
-    padding: 0.5em 2em 0.5em 1em;
-    text-align: left;
-    font-size: 0.9rem;
-    border-top: 1px solid #757575;
-    border-bottom: 1px solid #757575;
+    padding: 1em;
+}
+.table-headers th:first-child{
+    border-radius: 7px 0 0 0;
+}
+.table-headers th:last-child{
+    border-radius: 0 7px 0 0;
+}
+.table-rows{
+    border-bottom: 2px solid #c4c4c4;
+}
+.table-rows:last-of-type{
+    border-bottom: none;
 }
 .table-rows td{
     padding: 1.5em 2em 1.5em 1em;
-    text-align: left;
     font-size: 0.9rem;
-    border-bottom: 1px solid #757575;
     overflow: hidden;
 }
+
+.customer{
+    width: 35%;
+    min-width: 20ch;
+}
+.service{
+    width: 10%;
+    min-width: 13ch;
+}
+.date{
+    width: 20%;
+    min-width: 14ch;
+}
+.time{
+    min-width: 11ch;
+}
+
 .cName{
     font-weight: 600;
 }
@@ -239,12 +298,6 @@ table .table-headers{
 }
 .pending{
     color: #FFC943;
-}
-.details{
-    color: #1E1E1E;
-}
-.details:hover {
-    color: rgb(77, 77, 77)75;
 }
 
 /*Tablet*/
@@ -260,8 +313,9 @@ table .table-headers{
         width: 100%;
     }
     .page-container{
+        width: 100%;
         margin: auto;
-        padding: 6.5em 1em 1em 1em;
+        padding: 6.5em 3em 1em 3em;
         display: flex;
         flex-direction: column;
     }
@@ -300,7 +354,7 @@ table .table-headers{
     .menu{
         position: absolute;
         width: 20ch;
-        height: 33ch;
+        height: 100vh;
         top: 100%;
         display: none;
         justify-content: start;
@@ -341,14 +395,26 @@ table .table-headers{
         display: block;
     }
     .filter-container{
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50px) translateY(-30px);
     }
 }
 
-@media (max-width: 620px){
+@media (max-width: 630px){
+    .toolbar{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .toolbar .tabs{
+        width: 100%;
+        flex-direction: column;
+        font-size: 0.7rem;
+    }
     .page-container h1{
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 480px){
+    .page-container{
+        padding: 6.5em 1em 1em 1em;
     }
 }

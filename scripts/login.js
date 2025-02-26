@@ -28,7 +28,6 @@ document.getElementById("signup-form").addEventListener("submit", async function
         
         localStorage.setItem("session_token", data.session_token);
         
-        alert("Login successful");
         window.location.href = "dashboard.html";
     } catch (error) {
         errorHandling.textContent = error.message;
