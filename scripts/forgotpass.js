@@ -1,18 +1,16 @@
-document.getElementById("signup-form").addEventListener("submit", async function(event) {
+document.getElementById("forgot-password-form").addEventListener("submit", async function(event) {
     event.preventDefault();
     
     const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
     const errorHandling = document.querySelector(".error-handling");
     errorHandling.textContent = "";
     
     const requestData = {
         email: email,
-        password: password
     };
     
     try {
-        const response = await fetch("http://localhost:8000/adminLogin", {
+        const response = await fetch("http://localhost:8000/checkemail", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -25,15 +23,16 @@ document.getElementById("signup-form").addEventListener("submit", async function
         if (!response.ok) {
             throw new Error(data.error || "An error occurred");
         }
+        localStorage.setItem("password_reset_token", data.password_reset_token);
         
-        localStorage.setItem("session_token", data.session_token);
-        
-        window.location.href = "dashboard.html";
+        alert('A 4-digit code has been sent to your email.');
+        window.location.href = "email_verification.html";
     } catch (error) {
         errorHandling.textContent = error.message;
         errorHandling.style.color = "red";
     }
 });
+
 
 
  

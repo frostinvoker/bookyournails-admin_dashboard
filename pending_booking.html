@@ -13,6 +13,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&display=swap" rel="stylesheet">
     <title>Active Bookings</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (){
+            if (localStorage.getItem("session_token") === null){
+                window.location.href = "login.html";
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -53,7 +60,7 @@
                         <path d="M10.6667 28.4445H7.11111V24.8889H10.6667V28.4445Z" fill="#FF9E9E"/>
                         <path d="M10.6667 28.4445H7.11111V24.8889H10.6667V28.4445Z" fill="#FF9E9E"/>
                         </svg>
-                        <h2 class="active">Bookings</h2>
+                        <h2 id="bookings-dropdown" onclick="toggleDropdown()" class="active">Bookings</h2>
                         <span class="dropdown-icon" onclick="toggleDropdown()">
                             <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.53674e-06 18.3655L1.63609 20L10.5474 11.0918C10.6911 10.949 10.8051 10.7793 10.8829 10.5923C10.9607 10.4053 11.0007 10.2048 11.0007 10.0023C11.0007 9.79981 10.9607 9.5993 10.8829 9.41233C10.8051 9.22536 10.6911 9.05562 10.5474 8.91288L1.63609 0L0.00155163 1.63454L8.36547 10L9.53674e-06 18.3655Z" fill="white"/>

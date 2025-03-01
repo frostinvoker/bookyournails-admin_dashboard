@@ -1,39 +1,33 @@
-document.getElementById("signup-form").addEventListener("submit", async function(event) {
+document.getElementById("forgot-password-form").addEventListener("submit", async function(event) {
     event.preventDefault();
-    
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+
+    const code = document.getElementById("code").value;
     const errorHandling = document.querySelector(".error-handling");
     errorHandling.textContent = "";
     
     const requestData = {
-        email: email,
-        password: password
+        code:code
     };
-    
+
     try {
-        const response = await fetch("http://localhost:8000/adminLogin", {
+        const response = await fetch("http://localhost:8000/checkresetcode", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": localStorage.getItem("password_reset_token")  
             },
             body: JSON.stringify(requestData)
         });
-        
+
         const data = await response.json();
-        
+
         if (!response.ok) {
             throw new Error(data.error || "An error occurred");
         }
-        
-        localStorage.setItem("session_token", data.session_token);
-        
-        window.location.href = "dashboard.html";
+        alert('Code verified.');
+        window.location.href = "reset_password.html";
     } catch (error) {
         errorHandling.textContent = error.message;
         errorHandling.style.color = "red";
     }
 });
-
-
- 

@@ -13,6 +13,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&display=swap" rel="stylesheet">
     <title>Dashboard</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (){
+            if (localStorage.getItem("session_token") === null){
+                window.location.href = "login.html";
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -53,7 +60,7 @@
                         <path d="M10.6667 28.4445H7.11111V24.8889H10.6667V28.4445Z" fill="#FF9E9E"/>
                         <path d="M10.6667 28.4445H7.11111V24.8889H10.6667V28.4445Z" fill="#FF9E9E"/>
                         </svg>
-                        <h2>Bookings</h2>
+                        <h2 id="bookings-dropdown" onclick="toggleDropdown()">Bookings</h2>
                         <span class="dropdown-icon" onclick="toggleDropdown()">
                             <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.53674e-06 18.3655L1.63609 20L10.5474 11.0918C10.6911 10.949 10.8051 10.7793 10.8829 10.5923C10.9607 10.4053 11.0007 10.2048 11.0007 10.0023C11.0007 9.79981 10.9607 9.5993 10.8829 9.41233C10.8051 9.22536 10.6911 9.05562 10.5474 8.91288L1.63609 0L0.00155163 1.63454L8.36547 10L9.53674e-06 18.3655Z" fill="white"/>
@@ -86,12 +93,12 @@
                 </ul>
             </div>
             <div class="logout">
-                <a href="login.html">
+                <span>
                     <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.07364 15.9277H17.7022C18.1691 15.9277 18.5465 15.5077 18.5465 14.9902C18.5465 14.4727 18.1691 14.0527 17.7022 14.0527H3.12641L6.18063 10.6613C6.51033 10.2952 6.51033 9.70172 6.18063 9.33562C5.85094 8.96953 5.3165 8.96953 4.9868 9.33562L0 15.0192L4.9868 20.7028C5.15186 20.8861 5.36758 20.9775 5.58372 20.9775C5.79986 20.9775 6.01557 20.8861 6.18063 20.7028C6.51033 20.3367 6.51033 19.7433 6.18063 19.3772L3.07364 15.9277ZM25.311 0H10.958C10.0251 0 9.26944 0.839531 9.26944 1.875V10.3125H10.969V3.01828C10.969 2.39203 11.4266 1.88391 11.9906 1.88391H24.2518C24.8162 1.88391 25.2734 2.39203 25.2734 3.01828L25.3 26.9916C25.3 27.6178 24.8428 28.1259 24.2784 28.1259H11.991C11.4271 28.1259 10.9694 27.6178 10.9694 26.9916V19.6566L9.26989 19.6589V28.125C9.26989 29.1605 10.0255 30 10.9585 30H25.311C26.2439 30 27 29.1605 27 28.125V1.875C26.9996 0.839531 26.2435 0 25.311 0Z" fill="white"/>
                     </svg>
-                </a>
-                <a href="login.html"><h2>Log out</h2></a>             
+                </span>
+                <span id="logout"><h2>Log out</h2></span>             
             </div>
         </div>
         <div class="page-container">

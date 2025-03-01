@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inter', 'Arial';
+    background-color: #FFFFFF;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+.sidebar{
+    position: fixed;
+    height: 100vh;
+    color: white;
+    width: 20%;
+    min-width: 20ch;
+    background-color: #FF9E9E;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-header{
+    height: 10%;
+    padding: 1em 1em 1em 1em;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poetsen One', sans-serif;
+    font-size: 0.8rem;
+}
+.sidebar-header svg{
+    display: none;
+}
+.sidebar-header ul{
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+    gap: 1em;
+}
+.sidebar-header svg{
+    margin-left: 0.5em;
+}
+.header-separator{
+    border: 1px solid white;
+}
+.menu{
+    padding: 1.5em;
+}
+.menu ul{
+    list-style: none;
+}
+.menu ul li{
+    margin: 1.5em 0;
+    display: flex;
+    align-items: center;
+    color: #FFCECE;
+}
+.menu ul li .dropdown-icon{
+    margin-left: 1.5em;
+}
+.menu ul li .dropdown-icon:hover{
+    cursor: pointer;
+}
+.menu ul li .active{
+    color: white;
+}
+.menu ul li h2{
+    margin-left: 1em;
+    font-size: 1rem;
+}
+.menu ul li a{
+    text-decoration: none;
+    color:#FFCECE;
+}
+.menu .booking-dropdown{
+    display: none;
+    margin-left: 20%;
+}
+.menu .booking-dropdown li{
+    margin: 0.7em 0 0.7em 0;
+}
+.menu .booking-dropdown a{
+    text-decoration: none;
+}
+.menu .booking-dropdown a:link{
+    color: #FFCECE;
+}
+#bookings-dropdown:hover{
+    cursor: pointer;
+}
+.sidebar div:last-child{
+    margin-top: auto;
+}
+.logout{
+    height: 15%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1.5em 0 1.5em;
+    gap: 1em;
+}
+.logout h2{
+    font-size: 1rem;
+}
+.logout a{
+    text-decoration: none;
+    color: white;
+}
+.page-container{
+    width: 80%;
+    margin-left: 20%;
+    padding: 5em 3em 2em 2em;
+}
+.page-container h1{
+    font-size: 2rem;
+    color: #FF9E9E;
+}
+.page-container p{
+    color: #5B5B5B;
+}

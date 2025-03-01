@@ -9,21 +9,28 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <title>Forgot Password</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function (){
+                if (localStorage.getItem("password_reset_token") === null){
+                    window.location.href = "login.html";
+                }
+            });
+        </script>
     </head>
     <body>
         <div class="container">
             <div class="forgot-password-container">
-                <form id="forgot-password-form" onsubmit="">
+                <form id="forgot-password-form" onsubmit="checkCode(event)">
                     <h1>Email Verification</h1>
                     <div class="description">
                         <p>Enter the 4 digit code we sent to your email address.</p><br/><br/>
                     </div>
-                        <input class="pinEntry" name="pin-code" type="text" maxlength="4" autocomplete="off">
+                        <input class="pinEntry" name="code" id="code" type="text" maxlength="4" autocomplete="off">
                     <p class="error-handling"></p><br/><br/>
                     <button class="long-button" type="submit">Verify</button>
                 </form>
             </div>
         </div>
-        <script src="scripts/login.js"></script>
+        <script src="scripts/checkCode.js"></script>
     </body>
 </html>

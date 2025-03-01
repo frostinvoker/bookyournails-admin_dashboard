@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Inter', serif;
+    font-family: 'Inter', 'Arial';
     background-color: #FFFFFF;
 }
 .container{
@@ -90,6 +90,9 @@ body{
 .menu .booking-dropdown a:link{
     color: #FFCECE;
 }
+#bookings-dropdown:hover{
+    cursor: pointer;
+}
 .sidebar div:last-child{
     margin-top: auto;
 }
@@ -107,6 +110,9 @@ body{
 .logout a{
     text-decoration: none;
     color: white;
+}
+.logout span:hover{
+    cursor:pointer;
 }
 .page-container{
     width: 80%;
