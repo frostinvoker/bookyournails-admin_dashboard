@@ -90,6 +90,14 @@
                         </a>
                         <h2><a href="reviews.html">Service Reviews</a></h2>                            
                     </li>
+                    <li>
+                        <a href="change_password.html">
+                            <svg width="32" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.083 0C28.8763 0 36 7.2 36 16C36 24.8 28.8763 32 20.083 32C14.5018 32 9.62014 29.088 6.77385 24.688L9.28622 22.688C11.5283 26.352 15.5194 28.8 20.0989 28.8C23.4727 28.8 26.7083 27.4514 29.0939 25.051C31.4796 22.6505 32.8198 19.3948 32.8198 16C32.8198 12.6052 31.4796 9.3495 29.0939 6.94903C26.7083 4.54857 23.4727 3.2 20.0989 3.2C13.6113 3.2 8.26855 8.096 7.4894 14.4H11.8781L5.9311 20.368L0 14.4H4.27739C5.07244 6.32 11.8463 0 20.083 0ZM24.7898 13.184C25.5848 13.2 26.2367 13.84 26.2367 14.656V22.032C26.2367 22.832 25.5848 23.504 24.7739 23.504H15.9806C15.1696 23.504 14.5177 22.832 14.5177 22.032V14.656C14.5177 13.84 15.1696 13.2 15.9647 13.184V11.568C15.9647 9.12 17.9523 7.136 20.3693 7.136C22.8021 7.136 24.7898 9.12 24.7898 11.568V13.184ZM20.3693 9.376C19.1767 9.376 18.1908 10.352 18.1908 11.568V13.184H22.5636V11.568C22.5636 10.352 21.5777 9.376 20.3693 9.376Z" fill="#FFCECE"/>
+                            </svg>                                
+                        </a>
+                        <h2><a href="change_password.html">Change Password</a></h2>
+                    </li>
                 </ul>
             </div>
             <div class="logout">
@@ -102,7 +110,76 @@
             </div>
         </div>
         <div class="page-container">
-            <h1>Booking History</h1><br/>
+            <div class="title">
+                <h1>Booking History</h1>
+                <span onclick="toggleNotifs()">
+                    <svg width="25" height="28" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.6596 24.1069C28.7922 22.5901 27.5029 18.2983 27.5029 12.6929C27.5029 9.3265 26.1858 6.09802 23.8411 3.71765C21.4965 1.33728 18.3166 0 15.0008 0C11.685 0 8.50503 1.33728 6.16042 3.71765C3.81581 6.09802 2.49862 9.3265 2.49862 12.6929C2.49862 18.2999 1.20777 22.5901 0.340435 24.1069C0.118945 24.4925 0.00152416 24.9306 1.47384e-05 25.377C-0.00149468 25.8234 0.112961 26.2623 0.331838 26.6494C0.550716 27.0366 0.866275 27.3583 1.24669 27.5821C1.62711 27.8059 2.05894 27.924 2.49862 27.9243H8.87628C9.16473 29.3572 9.93182 30.6451 11.0478 31.57C12.1638 32.4948 13.5602 33 15.0008 33C16.4414 33 17.8378 32.4948 18.9538 31.57C20.0697 30.6451 20.8368 29.3572 21.1253 27.9243H27.5029C27.9425 27.9237 28.3741 27.8055 28.7543 27.5815C29.1345 27.3576 29.4499 27.0358 29.6686 26.6487C29.8872 26.2616 30.0016 25.8229 30 25.3766C29.9984 24.9303 29.881 24.4924 29.6596 24.1069ZM15.0008 30.4629C14.2254 30.4626 13.4691 30.2184 12.836 29.7638C12.203 29.3091 11.7243 28.6665 11.4658 27.9243H18.5358C18.2773 28.6665 17.7986 29.3091 17.1655 29.7638C16.5325 30.2184 15.7762 30.4626 15.0008 30.4629Z"/>
+                    </svg>                                                                                     
+                </span>
+            </div>
+            <div class="notification-container">
+                <div class="notification-header">
+                    <h2>Notification</h2>
+                </div>
+                <div class="notification-body">
+                    <div class="notification-card">
+                        <div class="card-left">
+                            <div class="card-description"><strong>Mark Angelo Delfin</strong><p>requested a Removal service for February 10, 2025.</p></div>
+                            <div><p class="time">2m</p></div>
+                        </div>
+                        <div class="card-right">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#FF9E9E"/>
+                                </svg>                                    
+                            </span>
+                        </div>
+                    </div>
+                    <div class="notification-card">
+                        <div class="card-left">
+                            <div class="card-description"><strong>Mark Angelo Delfin</strong><p>requested a Removal service for February 10, 2025.</p></div>
+                            <div><p class="time">2m</p></div>
+                        </div>
+                        <div class="card-right">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#FF9E9E"/>
+                                </svg>                                    
+                            </span>
+                        </div>
+                    </div>
+                    <div class="notification-card">
+                        <div class="card-left">
+                            <div class="card-description"><strong>Mark Angelo Delfin</strong><p>requested a Removal service for February 10, 2025.</p></div>
+                            <div><p class="time">2m</p></div>
+                        </div>
+                        <div class="card-right">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#FF9E9E"/>
+                                </svg>                                    
+                            </span>
+                        </div>
+                    </div>
+                    <div class="notification-card">
+                        <div class="card-left">
+                            <div class="card-description"><strong>Mark Angelo Delfin</strong><p>requested a Removal service for February 10, 2025.</p></div>
+                            <div><p class="time">2m</p></div>
+                        </div>
+                        <div class="card-right">
+                            <span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#FF9E9E"/>
+                                </svg>                                    
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-footer">
+                    <span><h2>Mark all as read</h2></span>
+                </div>
+            </div><br/><br/>
             <div class="toolbar">
                 <div class="tabs">
                     <div class="tabs-item active">

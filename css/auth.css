@@ -70,7 +70,7 @@ input::placeholder{
     padding: 1em;
     font-weight: bold;
 }
-.signup-button:hover{
+.login-button:hover{
     cursor: pointer;
 }
 .svg-pink-poly{

@@ -44,3 +44,35 @@ function toggleDropdown(){
       notifsIcon.style.fill = '#FF9E9E'
     }
   }
+
+  function showDetails() {
+    const customerDetails = document.querySelector('.customer-details')
+    const pageContainer = document.querySelector('.page-container')
+  
+    customerDetails.style.display = 'flex';
+    pageContainer.classList.add('show-overlay');
+  }
+  function closeDetails(){
+    const customerDetails = document.querySelector('.customer-details')
+    const pageContainer = document.querySelector('.page-container')
+  
+    customerDetails.style.display = 'none';
+    pageContainer.classList.remove('show-overlay');
+  }
+  function showBooking() {
+    const customerDetails = document.querySelector('.customer-details')
+    const pageContainer = document.querySelector('.page-container')
+  
+    customerDetails.style.display = 'flex';
+    pageContainer.classList.add('show-overlay');
+  }
+  function closeBooking(){
+    const customerDetails = document.querySelector('.customer-details')
+    const pageContainer = document.querySelector('.page-container')
+  
+    customerDetails.style.display = 'none';
+    pageContainer.classList.remove('show-overlay');
+  }
+
+
+  
